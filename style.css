@@ -10,8 +10,73 @@ body {
     background: linear-gradient(45deg, #a3c3f8 0%, #166ff3 100%);
   }
 
+.sun {
+    width: 5px;
+}
+
+.cloud {
+    width: 5px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.search {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 7px;
+}
+
+.search input {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.search button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 1px;
+    align-self: center;
+}
+
+.meteo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meteo img {
+    width: 100px;
+    height: 100px;
+}
+
+.temp {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.humidity {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.wind_speed {
+    font-size: 15px;
+    font-weight: bold;
 }
