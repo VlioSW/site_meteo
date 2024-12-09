@@ -10,6 +10,14 @@ body {
     background: linear-gradient(45deg, #a3c3f8 0%, #166ff3 100%);
   }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .sun {
     width: 5px;
 }
@@ -24,6 +32,13 @@ body {
     align-items: center;
 }
 
+.card {
+    background: rgba(235, 235, 235, .5);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+}
+
 .search {
     display: flex;
     border: 1px solid rgba(255, 255, 255, .5);
@@ -34,6 +49,8 @@ body {
     background-color: transparent;
     color: white;
     border: none;
+    padding: 5px;
+    outline: none;
 }
 
 .search button {
@@ -61,9 +78,11 @@ body {
 }
 
 .details {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    
 }
 
 h2 {

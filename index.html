@@ -8,44 +8,51 @@
 </head>
 <body>
 
-    <img src="images/sun.svg" class="sun" width="">
-    <img src="images/cloud.svg" class="cloud" width="">
+    <div class="main">
 
-    <div class="container">
-        <form class="search">
-            <input type="text" id="searchSaisi" placeholder="Paris, New York, Tokyo...">
-            <button type="submit"><img src="images/search_logo.svg" width="20"></button>
-        </form>
+        <img src="images/sun.svg" class="sun" width="">
+        <img src="images/cloud.svg" class="cloud" width="">
 
-        <div class="meteo">
-            <img src="" id="icone" width="50">
-            
-            <div class="temp">
-                <span>-</span>
-                <span>°C</span>
-            </div>
+        <div class="container">
 
-            <div class="details">
-                <div>
-                    <h2>Humidity</h2>
-                    <div class="humidity">
+            <div class="card">
+
+                <form class="search">
+                    <input type="text" id="searchSaisi" placeholder="Paris, New York, Tokyo...">
+                    <button type="submit"><img src="images/search_logo.svg" width="20"></button>
+                </form>
+
+                <div class="meteo">
+                    <img src="" id="icone" width="50">
+                    
+                    <div class="temp">
                         <span>-</span>
-                        <span>%</span>
+                        <span>°C</span>
+                    </div>
+
+                    <div class="details">
+                        <div>
+                            <h2>Humidity</h2>
+                            <div class="humidity">
+                                <span>-</span>
+                                <span>%</span>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <h2>Wind speed</h2>
+                            <div class="wind_speed">
+                                <span>-</span>
+                                <span>km/h</span>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
-
-                <div>
-                    <h2>Wind speed</h2>
-                    <div class="wind_speed">
-                        <span>-</span>
-                        <span>km/h</span>
-                    </div>
-
-                </div>
-
             </div>
-
         </div>
     </div>
 
