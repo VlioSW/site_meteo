@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(45deg, #a3c3f8 0%, #166ff3 100%);
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
