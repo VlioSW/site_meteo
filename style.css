@@ -8,6 +8,7 @@ body {
     height: 100%;
     margin: 0;
     background: linear-gradient(45deg, #a3c3f8 0%, #166ff3 100%);
+    overflow: hidden;
   }
 
 .main {
@@ -22,34 +23,50 @@ body {
     position: absolute;
     background-color: #EB6E4B;
     top: 15%;
-    right: 20%;
+    right: 25%;
     width: 250px;
+    height: 250px;
     border-radius: 50%;
-    animation: sun 5s linear infinite running;
+    animation: sun 20s ease-in-out infinite;
+}
+
+.cloud {
+    position: absolute;
 }
 
 .cloud1 {
-    position: absolute;
-    top: 2%;
-
-    width: 5px;
+    top: 2rem;
+    left: 100rem;
+    width: 100px;
     animation: cloud 100s linear infinite;
 }
 
 .cloud2 {
-    position: absolute;
-    top: 15%;
-    left: 0%;
-    width: 5px;
+    top: 15rem;
+    left: 0;
+    width: 130px;
     animation: cloud 50s linear infinite;
 }
 
 .cloud3 {
-    position: absolute;
-    top: 18%;
-    left: 5%;
-    width: 5px;
+    top: 18rem;
+    left: 5rem;
+    width: 125px;
     animation: cloud 50s linear infinite;
+}
+
+.cloud4 {
+    bottom: 5rem;
+    left: 50rem;
+    width: 160px;
+    animation: cloud 300s linear infinite;
+}
+
+.cloud5 {
+    bottom: 1rem;
+    left: 60rem;
+    width: 120px;
+    animation: cloud 60s linear infinite;
 }
 
 .container {
@@ -63,6 +80,7 @@ body {
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: 10px;
+    backdrop-filter: blur(5px)
 }
 
 .search {
@@ -124,4 +142,26 @@ h2 {
 .wind_speed {
     font-size: 15px;
     font-weight: bold;
+}
+
+
+@keyframes sun {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(40px, 20px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes cloud {
+    0% { 
+        transform: translateX(-100vw); 
+    }
+    100% { 
+        transform: translateX(100vw); 
+    }
 }
