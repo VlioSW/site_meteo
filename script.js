@@ -3,14 +3,14 @@ const apiKey = '6572fbd15c185aa01ffa6d2147c90170';
 const form = document.querySelector('.search');
 const searchInput = document.getElementById('searchInput');
 const icon = document.getElementById('icon');
-const tempElement = document.querySelector('.temp');
-const humidityElement = document.querySelector('.humidity');
-const windSpeedElement = document.querySelector('.wind_speed');
+const tempElement = document.querySelector('.temp_value');
+const humidityElement = document.querySelector('.humidity_value');
+const windSpeedElement = document.querySelector('.wind_value');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 if (searchInput.value) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&APPID=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&APPID=${apiKey}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -29,9 +29,9 @@ if (searchInput.value) {
       }
     })
     .catch(() => {
-      tempElement.innerText = '- °C';
-      humidityElement.innerText = '- %';
-      windSpeedElement.innerText = '- km/h';
+      tempElement.innerText = '-';
+      humidityElement.innerText = '-';
+      windSpeedElement.innerText = '-';
     });
 }
 else {
