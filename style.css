@@ -4,12 +4,21 @@ html {
     padding: 0;
   }
 
-body {
+body.light-theme {
     height: 100%;
     margin: 0;
     background: linear-gradient(45deg, #a3c3f8 0%, #166ff3 100%);
+    color: #333;
     overflow: hidden;
-  }
+}
+
+body.dark-theme {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(45deg, #15233d 0%, #051c56 100%);
+    color: #fff;
+    overflow: hidden;
+}
 
 .main {
     display: flex;
@@ -17,6 +26,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    background: inherit; 
+    transition: background-color 0.3s ease;
 }
 
 .sun {
@@ -37,35 +48,35 @@ body {
 .cloud1 {
     top: 2rem;
     left: 100rem;
-    width: 100px;
+    width: 180px;
     animation: cloud 100s linear infinite;
 }
 
 .cloud2 {
     top: 15rem;
     left: 0;
-    width: 130px;
+    width: 220px;
     animation: cloud 50s linear infinite;
 }
 
 .cloud3 {
     top: 18rem;
     left: 5rem;
-    width: 125px;
+    width: 225px;
     animation: cloud 50s linear infinite;
 }
 
 .cloud4 {
     bottom: 5rem;
     left: 50rem;
-    width: 160px;
+    width: 250px;
     animation: cloud 300s linear infinite;
 }
 
 .cloud5 {
     bottom: 1rem;
     left: 60rem;
-    width: 120px;
+    width: 180px;
     animation: cloud 60s linear infinite;
 }
 
@@ -91,7 +102,7 @@ body {
 
 .search input {
     background-color: transparent;
-    color: white;
+    color: black;
     border: none;
     padding: 5px;
     outline: none;
