@@ -2,6 +2,7 @@ const apiKey = '6572fbd15c185aa01ffa6d2147c90170';
 
 const form = document.querySelector('.search');
 const searchInput = document.getElementById('searchInput');
+const cityElement = document.querySelector('.city');
 const icon = document.getElementById('icon');
 const sunElement = document.querySelector('.sun');
 const clouds = document.querySelectorAll('.cloud1, .cloud2, .cloud3, .cloud4, .cloud5');
@@ -20,6 +21,7 @@ if (searchInput.value) {
       return response.json();
     })
     .then(data => {
+      cityElement.innerText = data.name;
       tempElement.innerText = Math.round(data.main.temp);
       humidityElement.innerText = data.main.humidity;
       windSpeedElement.innerText = Math.round(data.wind.speed);
@@ -43,6 +45,10 @@ if (searchInput.value) {
         } else if (weatherCondition === 'rain') {
           document.body.classList.add('dark-theme');
           document.body.classList.remove('light-theme');
+          clouds.forEach(cloud => {
+            cloud.style.display = 'block'
+            cloud.src = `https://openweathermap.org/img/wn/09d@2x.png`;
+          });
 
         } else if (weatherCondition === 'clouds') {
           document.body.classList.add('dark-theme');
@@ -69,6 +75,7 @@ if (searchInput.value) {
       }
     })
     .catch(() => {
+      cityElement.innerText = '--';
       tempElement.innerText = '-';
       humidityElement.innerText = '-';
       windSpeedElement.innerText = '-';
