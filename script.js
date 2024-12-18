@@ -5,10 +5,19 @@ const searchInput = document.getElementById('searchInput');
 const cityElement = document.querySelector('.city');
 const icon = document.getElementById('icon');
 const sunElement = document.querySelector('.sun');
-const clouds = document.querySelectorAll('.cloud1, .cloud2, .cloud3, .cloud4, .cloud5');
+const clouds = document.querySelectorAll('.cloud');
 const tempElement = document.querySelector('.temp_value');
 const humidityElement = document.querySelector('.humidity_value');
 const windSpeedElement = document.querySelector('.wind_value');
+
+const showClouds = (show, icon) => {
+  clouds.forEach(cloud => {
+    cloud.style.display = show ? 'block' : 'none';
+    if (icon) {
+      cloud.src = icon;
+    }
+  });
+}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -33,39 +42,29 @@ if (searchInput.value) {
         const weatherCondition = data.weather[0].main.toLowerCase();
         const iconCode = data.weather[0].icon;
 
-        if (iconCode.includes('n')) {
+        sunElement.style.display = 'block';
+
+        const isNightTime = iconCode.includes('n');
+        if (isNightTime) {
           document.body.classList.add('dark-theme');
           document.body.classList.remove('light-theme');
-          clouds.forEach(cloud => {
-            cloud.style.display = 'none'
-          });
-          sunElement.style.display = 'block';
           sunElement.style.backgroundColor = '#3c3e43';
-
-        } else if (weatherCondition === 'rain') {
-          document.body.classList.add('dark-theme');
-          document.body.classList.remove('light-theme');
-          clouds.forEach(cloud => {
-            cloud.style.display = 'block'
-            cloud.src = `https://openweathermap.org/img/wn/09d@2x.png`;
-          });
-
-        } else if (weatherCondition === 'clouds') {
-          document.body.classList.add('dark-theme');
-          document.body.classList.remove('light-theme');
-          clouds.forEach(cloud => {
-            cloud.style.display = 'block'
-          });
-          sunElement.style.display = 'none';
-
         } else {
           document.body.classList.add('light-theme');
           document.body.classList.remove('dark-theme');
-          clouds.forEach(cloud => {
-            cloud.style.display = 'block'
-          });
           sunElement.style.backgroundColor = '#EB6E4B';
-          sunElement.style.display = 'block';
+        }
+        
+        if (weatherCondition === 'rain' || weatherCondition === 'drizzle') {
+          showClouds(true, 'https://openweathermap.org/img/wn/09d@4x.png');
+        }
+        
+        if (weatherCondition === 'clouds') {
+          showClouds(true);
+        }
+
+        if (weatherCondition === 'clear') {
+          showClouds(false);
         }
 
         
